@@ -107,7 +107,6 @@ A combinação de:
 ### Compras Internas (IAP)
 
 - Jade Espiritual (moeda premium)
-- Técnicas lendárias exclusivas
 - Skins de cultivador
 - Remoção de anúncios
 - Passe de temporada competitivo
