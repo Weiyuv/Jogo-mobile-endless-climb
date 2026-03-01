@@ -22,7 +22,7 @@ A escalada é feita exclusivamente através de:
 - Saltos marciais
 - Corridas na parede
 - Impulsos de Qi
-- Técnicas aéreas Wuxia
+- Técnicas Wuxia
 
 O mapa é procedural e infinito, representando o caminho interminável do cultivo.
 
@@ -33,7 +33,7 @@ O mapa é procedural e infinito, representando o caminho interminável do cultiv
 - Tema Wuxia com foco real em artes marciais
 - Sistema de técnicas desbloqueáveis
 - Leaderboards globais competitivos
-- Sistema estratégico de Safe Point comprável
+- Sistema estratégico de Safe Point comprável(f2p)
 - Progressão permanente baseada em cultivo
 
 ---
@@ -52,7 +52,7 @@ O jogador experimenta:
 
 ## Perfil
 
-- Idade: 16 a 35 anos
+- Idade: 14 a 35 anos
 - Fãs de cultura oriental e Wuxia
 - Jogadores competitivos
 - Público midcore mobile
