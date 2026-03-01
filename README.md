@@ -121,7 +121,7 @@ Função:
 
 - Permite salvar uma altura específica como ponto de retorno.
 - Pode ser usado uma única vez por tentativa.
-
+- Dura x dias
 ---
 
 ## Justificativa
@@ -178,9 +178,6 @@ O jogo possui:
 - Ranking semanal
 - Ranking por região
 - Ranking hardcore (sem Safe Point)
-
-A posição é baseada na maior altura atingida.
-
 ---
 
 ## Loop Principal
