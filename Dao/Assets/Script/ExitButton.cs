@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitButton : MonoBehaviour
 {
-    public void OnClickExit()
+    public int sceneIndex;
+
+    public void OnClickGoToScene()
     {
-        Application.Quit();
+        SceneManager.LoadScene(sceneIndex);
     }
 }
