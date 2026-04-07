@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // necessário para mudar de cena
+using UnityEngine.SceneManagement; 
 
 public class ChangeScene : MonoBehaviour
 {
     [Header("Nome da cena que será carregada")]
     public string sceneName;
 
-    // Função chamada pelo botão
+   
     public void LoadScene()
     {
         if (!string.IsNullOrEmpty(sceneName))
