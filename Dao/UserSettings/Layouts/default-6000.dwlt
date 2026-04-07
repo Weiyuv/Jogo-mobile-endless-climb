@@ -754,13 +754,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: -20644
       m_LastClickedID:
-        m_Data: 0
+        m_Data: -20644
       m_ExpandedIDs:
       - m_Data: -1320
-      - m_Data: 53008
-      - m_Data: 53110
+      - m_Data: 53016
+      - m_Data: 53026
+      - m_Data: 53136
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1493,9 +1495,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 476.03845, y: 310.0473, z: -9.684184}
+    m_Target: {x: -13.11907, y: 1.6742296, z: -0.1539166}
     speed: 2
-    m_Value: {x: 476.03845, y: 310.0473, z: -9.684184}
+    m_Value: {x: -13.11907, y: 1.6742296, z: -0.1539166}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1545,9 +1547,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 969.28827
+    m_Target: 15.463265
     speed: 2
-    m_Value: 969.28827
+    m_Value: 15.463265
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1630,7 +1632,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script
+    - Assets/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1640,7 +1642,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Script
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Bruno\Documents\GitHub\Jogo-mobile-endless-climb\Dao
   m_LockTracker:
@@ -1649,17 +1651,18 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 53518
+    - m_Data: 53672
     m_LastClickedID:
-      m_Data: 53518
+      m_Data: 53672
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 53408
-    - m_Data: 53410
-    - m_Data: 53412
-    - m_Data: 53414
-    - m_Data: 53416
-    - m_Data: 53516
+    - m_Data: 53426
+    - m_Data: 53428
+    - m_Data: 53430
+    - m_Data: 53432
+    - m_Data: 53434
+    - m_Data: 53534
+    - m_Data: 53540
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1693,11 +1696,11 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 53408
-    - m_Data: 53410
-    - m_Data: 53412
-    - m_Data: 53414
-    - m_Data: 53416
+    - m_Data: 53426
+    - m_Data: 53428
+    - m_Data: 53430
+    - m_Data: 53432
+    - m_Data: 53434
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1724,11 +1727,13 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: []
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs:
+    - m_Data: -20644
+    m_LastClickedInstanceID: -20644
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 47704
+    - m_Data: 53682
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1837,7 +1842,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 160
+    m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
