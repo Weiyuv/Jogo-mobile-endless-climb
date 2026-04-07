@@ -28,11 +28,10 @@ Principais momentos:
 
 ---
 
-### Doodle Jump
-- Jogo endless vertical com mecânicas simples
-- Extremamente acessível e fácil de aprender
-- Foco em pontuação e repetição de partidas
-- Público mais casual
+### Jump King
+- jogo de plataforma vertical desafiador, centrado na habilidade e precisão dos saltos.
+- objetivo do jogador é escalar uma torre, pulando de plataforma em plataforma, evitando quedas que podem fazê-lo retroceder longas distâncias.
+- Cada salto exige controle de força e posicionamento exato, tornando o progresso lento e recompensador.
 
 ---
 
