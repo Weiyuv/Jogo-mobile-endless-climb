@@ -249,7 +249,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 99
+  controlID: 91
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -758,13 +758,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -4590
-      - m_Data: -4524
-      - m_Data: -3658
-      - m_Data: -3632
       - m_Data: -1320
-      - m_Data: 53004
-      - m_Data: 53014
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1634,7 +1628,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Script
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1644,27 +1638,27 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Script
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Bruno\Documents\GitHub\Jogo-mobile-endless-climb\Dao
+  m_LastProjectPath: C:\Users\Bruno\Documents\GitHub\Jogo-mobile-endless-climb\Goose
+    Up
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 53516
+    - m_Data: 53518
     m_LastClickedID:
-      m_Data: 53516
+      m_Data: 53518
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 53200
-    - m_Data: 53202
-    - m_Data: 53204
-    - m_Data: 53206
-    - m_Data: 53208
-    - m_Data: 53210
-    - m_Data: 53514
+    - m_Data: 53408
+    - m_Data: 53410
+    - m_Data: 53412
+    - m_Data: 53414
+    - m_Data: 53416
+    - m_Data: 53418
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1698,12 +1692,12 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 53200
-    - m_Data: 53202
-    - m_Data: 53204
-    - m_Data: 53206
-    - m_Data: 53208
-    - m_Data: 53210
+    - m_Data: 53408
+    - m_Data: 53410
+    - m_Data: 53412
+    - m_Data: 53414
+    - m_Data: 53416
+    - m_Data: 53418
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
