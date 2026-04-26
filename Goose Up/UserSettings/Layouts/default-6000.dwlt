@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397.3334
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 1471.3334
     height: 647.3333
-  m_MinSize: {x: 202, y: 226}
-  m_MaxSize: {x: 4002, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -323,8 +323,8 @@ MonoBehaviour:
     y: 0
     width: 604.6666
     height: 1341.3334
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -678,7 +678,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
+    m_HSlider: 0
     m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
@@ -692,18 +692,18 @@ MonoBehaviour:
       y: 21
       width: 824
       height: 647.00006
-    m_Scale: {x: 1.3279394, y: 1.3279394}
-    m_Translation: {x: 413.3336, y: 312.3605}
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 412, y: 316.07367}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -311.25937
-      y: -235.22195
-      width: 620.51025
-      height: 487.22107
+      x: -412
+      y: -316.07367
+      width: 824
+      height: 647.00006
     m_MinimalGUI: 1
   m_defaultScale: 0.5054688
   m_LastWindowPixelSize: {x: 1236, y: 1002.0001}
@@ -1491,9 +1491,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 240.47482, y: 1131.142, z: -15.713642}
+    m_Target: {x: -1.9467763, y: -2.0938528, z: -0.023629306}
     speed: 2
-    m_Value: {x: 240.47482, y: 1131.142, z: -15.713642}
+    m_Value: {x: -1.9467763, y: -2.0938528, z: -0.023629306}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1543,9 +1543,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1710.5148
+    m_Target: 2.4345407
     speed: 2
-    m_Value: 1710.5148
+    m_Value: 2.4345407
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1628,7 +1628,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Bruno\Documents\GitHub\Jogo-mobile-endless-climb\Goose
     Up
@@ -1648,9 +1648,9 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 53518
+    - m_Data: 53532
     m_LastClickedID:
-      m_Data: 53518
+      m_Data: 53532
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 53408
@@ -1659,6 +1659,7 @@ MonoBehaviour:
     - m_Data: 53414
     - m_Data: 53416
     - m_Data: 53418
+    - m_Data: 53518
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1726,10 +1727,13 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: []
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 47704
     - m_Data: 53682
+    - m_Data: 53664
+    - m_Data: 53644
+    - m_Data: 53674
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
