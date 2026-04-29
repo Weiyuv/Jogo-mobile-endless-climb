@@ -1,11 +1,15 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float jumpForce = 15f;
     public float maxDragDistance = 3f;
 
+    public Animator animator;
+
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
+
     private Vector2 startPos;
     private Vector2 currentPos;
     private bool isDragging;
@@ -14,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -56,8 +61,14 @@ public class PlayerMovement : MonoBehaviour
             Vector2 drag = startPos - currentPos;
             drag = Vector2.ClampMagnitude(drag, maxDragDistance);
             rb.linearVelocity = drag * jumpForce;
+
+            if (drag.x > 0) sr.flipX = false;
+            if (drag.x < 0) sr.flipX = true;
+
             isDragging = false;
         }
+
+        animator.SetBool("isGrounded", isGrounded);
     }
 
     void OnCollisionStay2D(Collision2D collision)
