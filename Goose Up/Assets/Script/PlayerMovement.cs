@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float maxDragDistance = 3f;
 
     public Animator animator;
+    public LineRenderer aimLine;
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -19,6 +20,15 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+
+        if (aimLine != null)
+        {
+            aimLine.positionCount = 2;
+            aimLine.enabled = false;
+
+            aimLine.SetPosition(0, transform.position);
+            aimLine.SetPosition(1, transform.position);
+        }
     }
 
     void Update()
@@ -49,26 +59,55 @@ public class PlayerMovement : MonoBehaviour
         {
             isDragging = true;
             startPos = inputPos;
+
+            if (aimLine != null)
+                aimLine.enabled = true;
         }
 
         if (inputHold && isDragging)
         {
             currentPos = inputPos;
+
+            Vector2 drag = startPos - currentPos;
+            drag = Vector2.ClampMagnitude(drag, maxDragDistance);
+
+            if (aimLine != null)
+            {
+                aimLine.SetPosition(0, transform.position);
+                aimLine.SetPosition(1, (Vector2)transform.position + drag);
+            }
         }
 
         if (inputUp && isDragging && isGrounded)
         {
             Vector2 drag = startPos - currentPos;
             drag = Vector2.ClampMagnitude(drag, maxDragDistance);
-            rb.linearVelocity = drag * jumpForce;
+
+            Vector2 direction = drag.normalized;
+            float strength = Mathf.InverseLerp(0, maxDragDistance, drag.magnitude);
+
+            rb.linearVelocity = direction * strength * jumpForce;
 
             if (drag.x > 0) sr.flipX = false;
             if (drag.x < 0) sr.flipX = true;
 
             isDragging = false;
+
+            if (aimLine != null)
+            {
+                aimLine.enabled = false;
+                aimLine.SetPosition(0, transform.position);
+                aimLine.SetPosition(1, transform.position);
+            }
         }
 
         animator.SetBool("isGrounded", isGrounded);
+
+        if (!isDragging && aimLine != null && !aimLine.enabled)
+        {
+            aimLine.SetPosition(0, transform.position);
+            aimLine.SetPosition(1, transform.position);
+        }
     }
 
     void OnCollisionStay2D(Collision2D collision)
