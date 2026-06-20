@@ -4,19 +4,27 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public GameObject deathUI;
+    public ScoreManager scoreManager;
 
     void Awake()
     {
         instance = this;
         Time.timeScale = 1f;
-        deathUI.SetActive(false);
+
+        if (deathUI != null)
+            deathUI.SetActive(false);
     }
 
     public void PlayerDied()
     {
         Time.timeScale = 0f;
-        deathUI.SetActive(true);
+
+        if (deathUI != null)
+            deathUI.SetActive(true);
+
+        
     }
 
     public void Restart()

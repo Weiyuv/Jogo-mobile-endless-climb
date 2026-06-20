@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397.3334
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 104
+  controlID: 94
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -324,8 +324,8 @@ MonoBehaviour:
     y: 0
     width: 922
     height: 1341.3334
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -757,14 +757,17 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 50574
+      - m_Data: -14302
       m_LastClickedID:
-        m_Data: 50574
+        m_Data: -14302
       m_ExpandedIDs:
-      - m_Data: -18924
+      - m_Data: -13268
+      - m_Data: -10756
+      - m_Data: -1994
+      - m_Data: -1792
       - m_Data: -1320
-      - m_Data: 50622
-      - m_Data: 53816
+      - m_Data: 51382
+      - m_Data: 51472
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1497,9 +1500,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -15.020089, y: 9.78191, z: 0.27219442}
+    m_Target: {x: 458.15308, y: 1157.7303, z: -3.5943277}
     speed: 2
-    m_Value: {x: -15.020089, y: 9.78191, z: 0.27219442}
+    m_Value: {x: 458.15308, y: 1157.7303, z: -3.5943277}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1549,9 +1552,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 20.365292
+    m_Target: 369.433
     speed: 2
-    m_Value: 20.365292
+    m_Value: 369.433
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1708,7 +1711,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sprites
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1718,7 +1721,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sprites
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Bruno\Documents\GitHub\Jogo-mobile-endless-climb\Goose
     Up
@@ -1728,24 +1731,24 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 51194
+    - m_Data: 51220
     m_LastClickedID:
-      m_Data: 51194
+      m_Data: 51220
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 51062
-    - m_Data: 51064
-    - m_Data: 51066
-    - m_Data: 51068
-    - m_Data: 51070
-    - m_Data: 51072
-    - m_Data: 51074
     - m_Data: 51076
     - m_Data: 51078
     - m_Data: 51080
     - m_Data: 51082
     - m_Data: 51084
-    - m_Data: 51194
+    - m_Data: 51086
+    - m_Data: 51088
+    - m_Data: 51090
+    - m_Data: 51092
+    - m_Data: 51094
+    - m_Data: 51096
+    - m_Data: 51098
+    - m_Data: 51208
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1779,18 +1782,18 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 51062
-    - m_Data: 51064
-    - m_Data: 51066
-    - m_Data: 51068
-    - m_Data: 51070
-    - m_Data: 51072
-    - m_Data: 51074
     - m_Data: 51076
     - m_Data: 51078
     - m_Data: 51080
     - m_Data: 51082
     - m_Data: 51084
+    - m_Data: 51086
+    - m_Data: 51088
+    - m_Data: 51090
+    - m_Data: 51092
+    - m_Data: 51094
+    - m_Data: 51096
+    - m_Data: 51098
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1818,8 +1821,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 50574
-    m_LastClickedInstanceID: 50574
+    - m_Data: -14302
+    m_LastClickedInstanceID: -14302
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 47704
@@ -1834,6 +1837,7 @@ MonoBehaviour:
     - m_Data: 51358
     - m_Data: 51374
     - m_Data: 51314
+    - m_Data: 50782
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1992,4 +1996,4 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 48118
+  m_LastSelectedObjectID: -13268
