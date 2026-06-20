@@ -148,9 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f1f34e579f06b4f9801d80e70b24d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndlessClimbGenerator
-  platformPrefab: {fileID: 8817168930557929213, guid: 7ca3dd5fc72d2954284af570b8df5afa, type: 3}
+  defaultPlatformPrefab: {fileID: 8817168930557929213, guid: 7ca3dd5fc72d2954284af570b8df5afa, type: 3}
+  spawnRules:
+  - minScore: 5
+    prefab: {fileID: 8680121975295517271, guid: 11b641da8a72e9e438eed0bf46b31cc7, type: 3}
+    chance: 0.4
   player: {fileID: 1075077567}
-  platformsAhead: 15
+  platformsAhead: 1
   minYDistance: 1
   maxYDistance: 1.7
   minXDistance: 2
@@ -442,7 +446,7 @@ Transform:
   m_GameObject: {fileID: 206678357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -2.93, z: 0}
+  m_LocalPosition: {x: -0.08, y: -3.171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2050,6 +2054,18 @@ PrefabInstance:
     - target: {fileID: 4761316634074204326, guid: 577715e6bc80de64682a032874f149bd, type: 3}
       propertyPath: maxDragDistance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630845141484474886, guid: 577715e6bc80de64682a032874f149bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630845141484474886, guid: 577715e6bc80de64682a032874f149bd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630845141484474886, guid: 577715e6bc80de64682a032874f149bd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5630845141484474886, guid: 577715e6bc80de64682a032874f149bd, type: 3}
       propertyPath: m_LocalPosition.x

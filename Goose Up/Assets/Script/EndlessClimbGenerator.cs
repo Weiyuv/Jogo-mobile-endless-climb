@@ -3,7 +3,17 @@ using System.Collections.Generic;
 
 public class EndlessClimbGenerator : MonoBehaviour
 {
-    public GameObject platformPrefab;
+    [System.Serializable]
+    public class PlatformSpawnRule
+    {
+        public int minScore;
+        public GameObject prefab;
+        public float chance = 0.2f;
+    }
+
+    public GameObject defaultPlatformPrefab;
+    public List<PlatformSpawnRule> spawnRules;
+
     public Transform player;
 
     public int platformsAhead = 15;
@@ -36,14 +46,15 @@ public class EndlessClimbGenerator : MonoBehaviour
 
     void Update()
     {
-        if (player.position.y + 10f > highestY)
+        if (player.position.y + 6f > highestY)
         {
             SpawnPlatform();
         }
 
         for (int i = platforms.Count - 1; i >= 0; i--)
         {
-            if (platforms[i].transform.position.y < player.position.y - 15f)
+            if (platforms[i] != null &&
+                platforms[i].transform.position.y < player.position.y - 15f)
             {
                 Destroy(platforms[i]);
                 platforms.RemoveAt(i);
@@ -62,7 +73,8 @@ public class EndlessClimbGenerator : MonoBehaviour
             float yStep = Random.Range(minYDistance, maxYDistance);
             float newY = highestY + yStep;
 
-            float xOffset = Random.Range(minXDistance, maxXDistance) * (Random.value > 0.5f ? 1 : -1);
+            float xOffset = Random.Range(minXDistance, maxXDistance) *
+                            (Random.value > 0.5f ? 1 : -1);
             float newX = lastX + xOffset;
 
             pos = new Vector3(newX, newY, 0);
@@ -75,7 +87,22 @@ public class EndlessClimbGenerator : MonoBehaviour
         lastX = pos.x;
         lastPos = pos;
 
-        GameObject plat = Instantiate(platformPrefab, pos, Quaternion.identity);
+        GameObject prefabToSpawn = defaultPlatformPrefab;
+
+        int score = ScoreManager.instance != null ? ScoreManager.instance.score : 0;
+
+        for (int i = 0; i < spawnRules.Count; i++)
+        {
+            if (score >= spawnRules[i].minScore)
+            {
+                if (Random.value < spawnRules[i].chance)
+                {
+                    prefabToSpawn = spawnRules[i].prefab;
+                }
+            }
+        }
+
+        GameObject plat = Instantiate(prefabToSpawn, pos, Quaternion.identity);
         platforms.Add(plat);
     }
 }
