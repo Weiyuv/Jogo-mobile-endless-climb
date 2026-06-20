@@ -2,11 +2,11 @@
 
 ## Descrição Curta
 Goose Up é um jogo mobile endless de escalada inspirado em Jump King, ambientado em um universo Wuxia.  
-O jogador controla um ganso que sobe uma montanha infinita usando técnicas marciais e poderzinho.  
+O jogador controla um ganso que sobe uma caminho infinito usando técnicas marciais e poderzinho.  
 
 
 ## Proposta de Valor
-- Combinação de gameplay desafiador com progressão estilo RPG
+- Combinação de gameplay desafiador com progressão endless
 - Tema Wuxia com técnicas desbloqueáveis
 - Sistema de leaderboard global competitivo
 - Monetização justa sem bloquear progresso do jogador gratuito
