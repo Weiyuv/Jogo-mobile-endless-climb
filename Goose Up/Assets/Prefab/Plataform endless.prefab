@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5412231701337491193}
   m_Layer: 0
   m_Name: Plataform endless
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

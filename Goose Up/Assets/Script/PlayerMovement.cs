@@ -8,6 +8,15 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     public LineRenderer aimLine;
 
+    public GameObject platformPrefab;
+
+    [Header("Recharge Settings")]
+    public int stepsForDoubleTapRecharge = 5;
+    public int stepsForPlatformRecharge = 10;
+
+    private int stepsDoubleTap = 0;
+    private int stepsPlatform = 0;
+
     private Rigidbody2D rb;
     private SpriteRenderer sr;
 
@@ -15,6 +24,16 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 currentPos;
     private bool isDragging;
     private bool isGrounded;
+
+    private bool doubleJumpAvailable = true;
+    private bool platformSpawnAvailable = true;
+
+    private bool isSuspended = false;
+    private bool canSecondDrag = false;
+
+    private int tapCount = 0;
+    public float tapResetTime = 0.3f;
+    private float tapTimer;
 
     void Start()
     {
@@ -25,13 +44,18 @@ public class PlayerMovement : MonoBehaviour
         {
             aimLine.positionCount = 2;
             aimLine.enabled = false;
-
-            aimLine.SetPosition(0, transform.position);
-            aimLine.SetPosition(1, transform.position);
         }
     }
 
     void Update()
+    {
+        HandleInput();
+        HandleTapReset();
+
+        animator.SetBool("isGrounded", isGrounded);
+    }
+
+    void HandleInput()
     {
         Vector2 inputPos = Vector2.zero;
         bool inputDown = false;
@@ -55,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             inputUp = Input.GetMouseButtonUp(0);
         }
 
-        if (inputDown && isGrounded)
+        if (inputDown && (isGrounded || canSecondDrag))
         {
             isDragging = true;
             startPos = inputPos;
@@ -78,46 +102,119 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (inputUp && isDragging && isGrounded)
+        if (inputUp && isDragging)
         {
             Vector2 drag = startPos - currentPos;
             drag = Vector2.ClampMagnitude(drag, maxDragDistance);
 
-            Vector2 direction = drag.normalized;
-            float strength = Mathf.InverseLerp(0, maxDragDistance, drag.magnitude);
-
-            rb.linearVelocity = direction * strength * jumpForce;
-
-            if (drag.x > 0) sr.flipX = false;
-            if (drag.x < 0) sr.flipX = true;
+            Jump(drag);
 
             isDragging = false;
+            isSuspended = false;
+            canSecondDrag = false;
+
+            rb.gravityScale = 1f;
 
             if (aimLine != null)
-            {
                 aimLine.enabled = false;
-                aimLine.SetPosition(0, transform.position);
-                aimLine.SetPosition(1, transform.position);
-            }
         }
 
-        animator.SetBool("isGrounded", isGrounded);
-
-        if (!isDragging && aimLine != null && !aimLine.enabled)
+        if (inputUp)
         {
-            aimLine.SetPosition(0, transform.position);
-            aimLine.SetPosition(1, transform.position);
+            RegisterTap();
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision)
+    void Jump(Vector2 drag)
+    {
+        Vector2 direction = drag.normalized;
+        float strength = Mathf.InverseLerp(0, maxDragDistance, drag.magnitude);
+
+        rb.linearVelocity = direction * strength * jumpForce;
+
+        if (drag.x > 0) sr.flipX = false;
+        if (drag.x < 0) sr.flipX = true;
+
+        doubleJumpAvailable = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.contacts[0].normal.y > 0.5f)
+        {
             isGrounded = true;
+
+            stepsDoubleTap++;
+            stepsPlatform++;
+
+            if (stepsDoubleTap >= stepsForDoubleTapRecharge)
+            {
+                stepsDoubleTap = 0;
+                doubleJumpAvailable = true;
+            }
+
+            if (stepsPlatform >= stepsForPlatformRecharge)
+            {
+                stepsPlatform = 0;
+                platformSpawnAvailable = true;
+            }
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         isGrounded = false;
+    }
+
+    void RegisterTap()
+    {
+        tapCount++;
+        tapTimer = tapResetTime;
+
+        if (tapCount == 2)
+        {
+            if (!isGrounded)
+                UseDoubleTap();
+
+            tapCount = 0;
+        }
+    }
+
+    void HandleTapReset()
+    {
+        if (tapCount > 0)
+        {
+            tapTimer -= Time.deltaTime;
+
+            if (tapTimer <= 0f)
+                tapCount = 0;
+        }
+    }
+
+    void UseDoubleTap()
+    {
+        if (isGrounded) return;
+        if (!doubleJumpAvailable) return;
+
+        isSuspended = true;
+        canSecondDrag = true;
+
+        rb.linearVelocity = Vector2.zero;
+        rb.gravityScale = 0f;
+    }
+
+    void UsePlatformSpawn()
+    {
+        if (!platformSpawnAvailable) return;
+
+        Vector3 spawnPos = transform.position + Vector3.down * 1f;
+        Instantiate(platformPrefab, spawnPos, Quaternion.identity);
+
+        platformSpawnAvailable = false;
+    }
+
+    public void OnPlatformButtonPressed()
+    {
+        UsePlatformSpawn();
     }
 }

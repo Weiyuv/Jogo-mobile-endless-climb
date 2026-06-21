@@ -9,10 +9,14 @@ public class ScoreManager : MonoBehaviour
     public int score = 0;
     public TextMeshProUGUI scoreText;
 
-    [Header("Upgrade")]
-    public GameObject upgradePanel;
-    public TextMeshProUGUI upgradeText;
+    [Header("Upgrade UI")]
+    public TextMeshProUGUI levelText;
+    public TextMeshProUGUI costText;
+    public TextMeshProUGUI bonusText;
 
+    public GameObject upgradePanel;
+
+    [Header("Upgrade Data")]
     public int upgradeLevel = 1;
     public int upgradeCost = 10;
 
@@ -26,6 +30,11 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
+        upgradeLevel = PlayerPrefs.GetInt("UpgradeLevel", 1);
+        upgradeCost = PlayerPrefs.GetInt("UpgradeCost", 10);
+
+        score = 0;
+
         if (upgradePanel != null)
             upgradePanel.SetActive(false);
 
@@ -40,16 +49,20 @@ public class ScoreManager : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        if (score < upgradeCost) return;
+        if (score < upgradeCost)
+            return;
 
         score -= upgradeCost;
         upgradeLevel++;
         upgradeCost += 5;
 
+        PlayerPrefs.SetInt("UpgradeLevel", upgradeLevel);
+        PlayerPrefs.SetInt("UpgradeCost", upgradeCost);
+        PlayerPrefs.Save();
+
         UpdateUI();
     }
 
-    // ✅ ABRIR PANEL
     public void OpenUpgradePanel()
     {
         if (upgradePanel == null) return;
@@ -58,7 +71,6 @@ public class ScoreManager : MonoBehaviour
         UpdateUI();
     }
 
-    // ✅ FECHAR PANEL
     public void CloseUpgradePanel()
     {
         if (upgradePanel == null) return;
@@ -71,12 +83,13 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = score.ToString();
 
-        if (upgradeText != null)
-        {
-            upgradeText.text =
-                "Level: " + upgradeLevel +
-                "\nScore: " + score +
-                "\nCost: " + upgradeCost;
-        }
+        if (levelText != null)
+            levelText.text = "Level: " + upgradeLevel;
+
+        if (costText != null)
+            costText.text = "Cost: " + upgradeCost;
+
+        if (bonusText != null)
+            bonusText.text = "+" + upgradeLevel + " score por plataforma";
     }
 }

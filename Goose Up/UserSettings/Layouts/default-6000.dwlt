@@ -680,8 +680,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -694,18 +694,18 @@ MonoBehaviour:
       y: 21
       width: 808.6667
       height: 647.00006
-    m_Scale: {x: 1.5, y: 1.5}
-    m_Translation: {x: 404.33337, y: 323.50003}
+    m_Scale: {x: 0.5054688, y: 0.5054688}
+    m_Translation: {x: 404.33334, y: 323.50003}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -269.55557
-      y: -215.66669
-      width: 539.11115
-      height: 431.33337
+      x: -799.91754
+      y: -640
+      width: 1599.8351
+      height: 1280
     m_MinimalGUI: 1
   m_defaultScale: 0.5054688
   m_LastWindowPixelSize: {x: 1213, y: 1002.0001}
@@ -757,12 +757,25 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 50842
+      - m_Data: 44454
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
+      - m_Data: -52334
+      - m_Data: -51212
+      - m_Data: -23414
+      - m_Data: -12204
+      - m_Data: -11624
+      - m_Data: -7770
+      - m_Data: -2618
       - m_Data: -1320
+      - m_Data: 50642
+      - m_Data: 50650
       - m_Data: 50660
+      - m_Data: 50740
+      - m_Data: 50766
+      - m_Data: 74856
+      - m_Data: 75474
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1495,9 +1508,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 61.11205, y: 1149.3611, z: -8.058845}
+    m_Target: {x: -3.4624934, y: 0.48738393, z: 0.38058305}
     speed: 2
-    m_Value: {x: 61.11205, y: 1149.3611, z: -8.058845}
+    m_Value: {x: -3.4624934, y: 0.48738393, z: 0.38058305}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1547,9 +1560,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 815.88513
+    m_Target: 8.684867
     speed: 2
-    m_Value: 815.88513
+    m_Value: 8.684867
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1706,7 +1719,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Script
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1716,7 +1729,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Script
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Bruno\Documents\GitHub\Jogo-mobile-endless-climb\Goose
     Up
@@ -1726,9 +1739,9 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 51266
+    - m_Data: 51280
     m_LastClickedID:
-      m_Data: 51266
+      m_Data: 51280
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 51132
@@ -1816,8 +1829,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 50842
-    m_LastClickedInstanceID: 50842
+    - m_Data: 44454
+    m_LastClickedInstanceID: 44454
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 47704
@@ -1835,8 +1848,8 @@ MonoBehaviour:
     - m_Data: 50782
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PlayerMovement
+      m_OriginalName: PlayerMovement
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1844,10 +1857,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 0
+        m_Data: 44454
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 11}
@@ -1991,4 +2004,4 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 50842
+  m_LastSelectedObjectID: 44454
