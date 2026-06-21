@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 1233.3334
     height: 647.3333
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -324,8 +324,8 @@ MonoBehaviour:
     y: 0
     width: 922
     height: 1341.3334
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -760,29 +760,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -12488
-      - m_Data: -12422
-      - m_Data: -11556
-      - m_Data: -11530
-      - m_Data: -8910
-      - m_Data: -8844
-      - m_Data: -8062
-      - m_Data: -8036
-      - m_Data: -5774
-      - m_Data: -5708
-      - m_Data: -4926
-      - m_Data: -4900
-      - m_Data: -2888
-      - m_Data: -2822
-      - m_Data: -1960
-      - m_Data: -1938
       - m_Data: -1320
-      - m_Data: 56132
-      - m_Data: 57760
-      - m_Data: 57770
-      - m_Data: 59084
-      - m_Data: 59102
-      - m_Data: 59112
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2012,4 +1990,4 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 59102
+  m_LastSelectedObjectID: 0
