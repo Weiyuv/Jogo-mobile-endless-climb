@@ -103,7 +103,7 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = score.ToString();
 
         if (coinsText != null)
-            coinsText.text = "Coins: " + coins;
+            coinsText.text = "Cultivation: " + coins;
 
         if (levelText != null)
             levelText.text = "Level: " + upgradeLevel;

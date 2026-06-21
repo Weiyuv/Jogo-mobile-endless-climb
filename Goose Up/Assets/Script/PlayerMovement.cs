@@ -21,14 +21,14 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer sr;
 
     private Vector2 startPos;
-    private Vector2 currentPos;
+    private Vector2 inputPos;
+
     private bool isDragging;
     private bool isGrounded;
 
     private bool doubleJumpAvailable = true;
     private bool platformSpawnAvailable = true;
 
-    private bool isSuspended = false;
     private bool canSecondDrag = false;
 
     private int tapCount = 0;
@@ -45,6 +45,9 @@ public class PlayerMovement : MonoBehaviour
             aimLine.positionCount = 2;
             aimLine.enabled = false;
         }
+
+        UpdatePlatformUI();
+        UpdateDoubleTapUI();
     }
 
     void Update()
@@ -55,11 +58,20 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("isGrounded", isGrounded);
     }
 
+    void LateUpdate()
+    {
+        if (!isDragging || aimLine == null) return;
+
+        Vector2 drag = startPos - inputPos;
+        drag = Vector2.ClampMagnitude(drag, maxDragDistance);
+
+        aimLine.SetPosition(0, transform.position);
+        aimLine.SetPosition(1, (Vector2)transform.position + drag);
+    }
+
     void HandleInput()
     {
-        Vector2 inputPos;
         bool inputDown;
-        bool inputHold;
         bool inputUp;
 
         if (Input.touchCount > 0)
@@ -68,14 +80,13 @@ public class PlayerMovement : MonoBehaviour
             inputPos = Camera.main.ScreenToWorldPoint(touch.position);
 
             inputDown = touch.phase == TouchPhase.Began;
-            inputHold = touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary;
             inputUp = touch.phase == TouchPhase.Ended;
         }
         else
         {
             inputPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
             inputDown = Input.GetMouseButtonDown(0);
-            inputHold = Input.GetMouseButton(0);
             inputUp = Input.GetMouseButtonUp(0);
         }
 
@@ -88,35 +99,20 @@ public class PlayerMovement : MonoBehaviour
                 aimLine.enabled = true;
         }
 
-        if (inputHold && isDragging)
-        {
-            currentPos = inputPos;
-
-            Vector2 drag = startPos - currentPos;
-            drag = Vector2.ClampMagnitude(drag, maxDragDistance);
-
-            if (aimLine != null)
-            {
-                aimLine.SetPosition(0, transform.position);
-                aimLine.SetPosition(1, (Vector2)transform.position + drag);
-            }
-        }
-
         if (inputUp && isDragging)
         {
-            Vector2 drag = startPos - currentPos;
+            isDragging = false;
+
+            Vector2 drag = startPos - inputPos;
             drag = Vector2.ClampMagnitude(drag, maxDragDistance);
 
             Jump(drag);
 
-            isDragging = false;
-            isSuspended = false;
-            canSecondDrag = false;
-
-            rb.gravityScale = 1f;
-
             if (aimLine != null)
                 aimLine.enabled = false;
+
+            canSecondDrag = false;
+            rb.gravityScale = 1f;
         }
 
         if (inputUp)
@@ -142,25 +138,31 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
 
-            bool isPlatform = collision.gameObject.CompareTag("Platform");
-
-            // ✔ DOUBLE JUMP só recarrega ao pisar em Platform
-            if (isPlatform)
+            if (collision.gameObject.CompareTag("Platform"))
             {
+                Platform platform = collision.collider.GetComponentInParent<Platform>();
+
+                if (platform != null && platform.alreadyCounted)
+                    return;
+
+                if (platform != null)
+                    platform.alreadyCounted = true;
+
                 stepsDoubleTap++;
+                stepsPlatform++;
 
                 if (stepsDoubleTap >= stepsForDoubleTapRecharge)
                 {
                     stepsDoubleTap = 0;
                     doubleJumpAvailable = true;
+                    UpdateDoubleTapUI();
                 }
-
-                stepsPlatform++;
 
                 if (stepsPlatform >= stepsForPlatformRecharge)
                 {
                     stepsPlatform = 0;
                     platformSpawnAvailable = true;
+                    UpdatePlatformUI();
                 }
             }
         }
@@ -198,26 +200,40 @@ public class PlayerMovement : MonoBehaviour
 
     void UseDoubleTap()
     {
-        if (isGrounded) return;
-        if (!doubleJumpAvailable) return;
+        if (isGrounded || !doubleJumpAvailable) return;
 
         doubleJumpAvailable = false;
 
-        isSuspended = true;
         canSecondDrag = true;
 
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0f;
+
+        UpdateDoubleTapUI();
     }
 
     void UsePlatformSpawn()
     {
         if (!platformSpawnAvailable) return;
 
-        Vector3 spawnPos = transform.position + Vector3.down * 0.6f;
+        Vector3 spawnPos = transform.position + Vector3.down * 1f;
         Instantiate(platformPrefab, spawnPos, Quaternion.identity);
 
         platformSpawnAvailable = false;
+
+        UpdatePlatformUI();
+    }
+
+    void UpdatePlatformUI()
+    {
+        if (GameManager.instance != null)
+            GameManager.instance.SetPlatformReady(platformSpawnAvailable);
+    }
+
+    void UpdateDoubleTapUI()
+    {
+        if (GameManager.instance != null)
+            GameManager.instance.SetDoubleTapReady(doubleJumpAvailable);
     }
 
     public void OnPlatformButtonPressed()
