@@ -5,9 +5,13 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    [Header("Score")]
+    [Header("Score (run)")]
     public int score = 0;
     public TextMeshProUGUI scoreText;
+
+    [Header("Coins (persistente)")]
+    public int coins = 0;
+    public TextMeshProUGUI coinsText;
 
     [Header("Upgrade UI")]
     public TextMeshProUGUI levelText;
@@ -33,6 +37,8 @@ public class ScoreManager : MonoBehaviour
         upgradeLevel = PlayerPrefs.GetInt("UpgradeLevel", 1);
         upgradeCost = PlayerPrefs.GetInt("UpgradeCost", 10);
 
+        coins = PlayerPrefs.GetInt("Coins", 0);
+
         score = 0;
 
         if (upgradePanel != null)
@@ -47,15 +53,28 @@ public class ScoreManager : MonoBehaviour
         UpdateUI();
     }
 
+    public void BankScore()
+    {
+        coins += score;
+
+        PlayerPrefs.SetInt("Coins", coins);
+        PlayerPrefs.Save();
+
+        score = 0;
+
+        UpdateUI();
+    }
+
     public void BuyUpgrade()
     {
-        if (score < upgradeCost)
+        if (coins < upgradeCost)
             return;
 
-        score -= upgradeCost;
+        coins -= upgradeCost;
         upgradeLevel++;
         upgradeCost += 5;
 
+        PlayerPrefs.SetInt("Coins", coins);
         PlayerPrefs.SetInt("UpgradeLevel", upgradeLevel);
         PlayerPrefs.SetInt("UpgradeCost", upgradeCost);
         PlayerPrefs.Save();
@@ -82,6 +101,9 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
             scoreText.text = score.ToString();
+
+        if (coinsText != null)
+            coinsText.text = "Coins: " + coins;
 
         if (levelText != null)
             levelText.text = "Level: " + upgradeLevel;

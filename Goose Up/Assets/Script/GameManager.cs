@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject deathUI;
-    public ScoreManager scoreManager;
 
     void Awake()
     {
@@ -19,12 +18,14 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
+        // converte score da run em coins
+        if (ScoreManager.instance != null)
+            ScoreManager.instance.BankScore();
+
         Time.timeScale = 0f;
 
         if (deathUI != null)
             deathUI.SetActive(true);
-
-        
     }
 
     public void Restart()

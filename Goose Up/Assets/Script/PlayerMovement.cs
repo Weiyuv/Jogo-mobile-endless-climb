@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!platformSpawnAvailable) return;
 
-        Vector3 spawnPos = transform.position + Vector3.down * 1f;
+        Vector3 spawnPos = transform.position + Vector3.down * 0.6f;
         Instantiate(platformPrefab, spawnPos, Quaternion.identity);
 
         platformSpawnAvailable = false;

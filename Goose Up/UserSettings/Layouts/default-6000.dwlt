@@ -757,25 +757,17 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 44454
+      - m_Data: -11088
       m_LastClickedID:
-        m_Data: 0
+        m_Data: -11088
       m_ExpandedIDs:
-      - m_Data: -52334
-      - m_Data: -51212
-      - m_Data: -23414
-      - m_Data: -12204
-      - m_Data: -11624
-      - m_Data: -7770
-      - m_Data: -2618
       - m_Data: -1320
+      - m_Data: 50616
       - m_Data: 50642
       - m_Data: 50650
       - m_Data: 50660
-      - m_Data: 50740
-      - m_Data: 50766
-      - m_Data: 74856
-      - m_Data: 75474
+      - m_Data: 50802
+      - m_Data: 50812
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1508,9 +1500,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -3.4624934, y: 0.48738393, z: 0.38058305}
+    m_Target: {x: 475.6816, y: 759.65765, z: -1.1787508}
     speed: 2
-    m_Value: {x: -3.4624934, y: 0.48738393, z: 0.38058305}
+    m_Value: {x: 475.6816, y: 759.65765, z: -1.1787508}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1560,9 +1552,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.684867
+    m_Target: 190.02946
     speed: 2
-    m_Value: 8.684867
+    m_Value: 190.02946
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1739,24 +1731,24 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 51280
+    - m_Data: 51330
     m_LastClickedID:
-      m_Data: 51280
+      m_Data: 51330
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 51132
-    - m_Data: 51134
-    - m_Data: 51136
-    - m_Data: 51138
-    - m_Data: 51140
-    - m_Data: 51142
-    - m_Data: 51144
-    - m_Data: 51146
-    - m_Data: 51148
-    - m_Data: 51150
-    - m_Data: 51152
-    - m_Data: 51154
-    - m_Data: 51264
+    - m_Data: 51196
+    - m_Data: 51198
+    - m_Data: 51200
+    - m_Data: 51202
+    - m_Data: 51204
+    - m_Data: 51206
+    - m_Data: 51208
+    - m_Data: 51210
+    - m_Data: 51212
+    - m_Data: 51214
+    - m_Data: 51216
+    - m_Data: 51218
+    - m_Data: 51328
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1790,18 +1782,18 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 51132
-    - m_Data: 51134
-    - m_Data: 51136
-    - m_Data: 51138
-    - m_Data: 51140
-    - m_Data: 51142
-    - m_Data: 51144
-    - m_Data: 51146
-    - m_Data: 51148
-    - m_Data: 51150
-    - m_Data: 51152
-    - m_Data: 51154
+    - m_Data: 51196
+    - m_Data: 51198
+    - m_Data: 51200
+    - m_Data: 51202
+    - m_Data: 51204
+    - m_Data: 51206
+    - m_Data: 51208
+    - m_Data: 51210
+    - m_Data: 51212
+    - m_Data: 51214
+    - m_Data: 51216
+    - m_Data: 51218
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1829,8 +1821,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 44454
-    m_LastClickedInstanceID: 44454
+    - m_Data: -11088
+    m_LastClickedInstanceID: -11088
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 47704
@@ -1848,8 +1840,8 @@ MonoBehaviour:
     - m_Data: 50782
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: PlayerMovement
-      m_OriginalName: PlayerMovement
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1857,10 +1849,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 44454
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 11}
@@ -2004,4 +1996,4 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 44454
+  m_LastSelectedObjectID: -11088
