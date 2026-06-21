@@ -57,10 +57,10 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleInput()
     {
-        Vector2 inputPos = Vector2.zero;
-        bool inputDown = false;
-        bool inputHold = false;
-        bool inputUp = false;
+        Vector2 inputPos;
+        bool inputDown;
+        bool inputHold;
+        bool inputUp;
 
         if (Input.touchCount > 0)
         {
@@ -134,8 +134,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (drag.x > 0) sr.flipX = false;
         if (drag.x < 0) sr.flipX = true;
-
-        doubleJumpAvailable = true;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -144,19 +142,26 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
 
-            stepsDoubleTap++;
-            stepsPlatform++;
+            bool isPlatform = collision.gameObject.CompareTag("Platform");
 
-            if (stepsDoubleTap >= stepsForDoubleTapRecharge)
+            // ✔ DOUBLE JUMP só recarrega ao pisar em Platform
+            if (isPlatform)
             {
-                stepsDoubleTap = 0;
-                doubleJumpAvailable = true;
-            }
+                stepsDoubleTap++;
 
-            if (stepsPlatform >= stepsForPlatformRecharge)
-            {
-                stepsPlatform = 0;
-                platformSpawnAvailable = true;
+                if (stepsDoubleTap >= stepsForDoubleTapRecharge)
+                {
+                    stepsDoubleTap = 0;
+                    doubleJumpAvailable = true;
+                }
+
+                stepsPlatform++;
+
+                if (stepsPlatform >= stepsForPlatformRecharge)
+                {
+                    stepsPlatform = 0;
+                    platformSpawnAvailable = true;
+                }
             }
         }
     }
@@ -195,6 +200,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded) return;
         if (!doubleJumpAvailable) return;
+
+        doubleJumpAvailable = false;
 
         isSuspended = true;
         canSecondDrag = true;
