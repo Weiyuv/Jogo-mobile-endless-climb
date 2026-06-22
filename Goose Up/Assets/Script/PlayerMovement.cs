@@ -148,21 +148,29 @@ public class PlayerMovement : MonoBehaviour
                 if (platform != null)
                     platform.alreadyCounted = true;
 
-                stepsDoubleTap++;
-                stepsPlatform++;
-
-                if (stepsDoubleTap >= stepsForDoubleTapRecharge)
+                // 🔥 SÓ conta depois que habilidade foi usada
+                if (!doubleJumpAvailable)
                 {
-                    stepsDoubleTap = 0;
-                    doubleJumpAvailable = true;
-                    UpdateDoubleTapUI();
+                    stepsDoubleTap++;
+
+                    if (stepsDoubleTap >= stepsForDoubleTapRecharge)
+                    {
+                        stepsDoubleTap = 0;
+                        doubleJumpAvailable = true;
+                        UpdateDoubleTapUI();
+                    }
                 }
 
-                if (stepsPlatform >= stepsForPlatformRecharge)
+                if (!platformSpawnAvailable)
                 {
-                    stepsPlatform = 0;
-                    platformSpawnAvailable = true;
-                    UpdatePlatformUI();
+                    stepsPlatform++;
+
+                    if (stepsPlatform >= stepsForPlatformRecharge)
+                    {
+                        stepsPlatform = 0;
+                        platformSpawnAvailable = true;
+                        UpdatePlatformUI();
+                    }
                 }
             }
         }
